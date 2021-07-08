@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        background: #f7f7f7;
+        font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', Helvetica,
+            Arial, sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6,
+    .section-header {
+        font-family: 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial,
+            sans-serif;
+        font-weight: 500;
+        line-height: 1.2;
+
+        span {
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial,
+                sans-serif;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        small {
+            font-family: 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial,
+                sans-serif;
+            font-weight: 300;
+            line-height: 1.2;
+            font-size: 0.75em;
+        }
+    }
+
+    h1,
+    .h1 {
+        letter-spacing: -0.04em;
+        font-size: 2rem;
+
+        span {
+            letter-spacing: -0.04em;
+            font-size: 2rem;
+        }
+    }
+
+    h2,
+    .h2 {
+        letter-spacing: -0.03em;
+        font-size: 1.7rem;
+
+        span {
+            letter-spacing: -0.03em;
+            font-size: 1.7rem;
+        }
+    }
+
+    h3,
+    .h3 {
+        letter-spacing: -0.03em;
+        font-size: 1.5rem;
+
+        span {
+            letter-spacing: -0.03em;
+            font-size: 1.5rem;
+        }
+    }
+
+    h4,
+    .h4 {
+        letter-spacing: -0.03em;
+        font-size: 1.4rem;
+
+        span {
+            letter-spacing: -0.03em;
+            font-size: 1.4rem;
+        }
+    }
+
+    h5,
+    .h5 {
+        letter-spacing: -0.03em;
+        font-size: 1.2rem;
+
+        span {
+            letter-spacing: -0.03em;
+            font-size: 1.2rem;
+        }
+    }
+
+    h6,
+    .h6 {
+        letter-spacing: -0.02em;
+        font-size: 1rem;
+
+        span {
+            letter-spacing: -0.02em;
+            font-size: 1rem;
+        }
+    }
+
+    p {
+        margin-top: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .grid.cols-75-25 {
+        grid-template-columns: 75% 25%;
+
+    }
+
+    .grid {
+        gap: .75rem;
+    }
+}
