@@ -20,15 +20,18 @@
                 If there are duplicates, you can see the count and remove all
                 but the first instance of the word.
             </p>
+            <p>Allow me to start you off with a great line from Ron Swanson.</p>
         </standard-grid>
         <Heading class="h3" level="2">Add a word</Heading>
         <TextInput
             class="rounded-r-none"
             v-model="wordInputValue"
-            @keyup.enter="addWords"
+            @keyup.enter="addWords(wordInputValue)"
         />
 
-        <btn class="border-l-0 rounded-l-none" @click="addWords">Add</btn>
+        <btn class="border-l-0 rounded-l-none" @click="addWords(wordInputValue)"
+            >Add</btn
+        >
         <br />
 
         <section v-if="duplicates.length">
@@ -71,6 +74,10 @@
                     {{ word }}
                 </Box>
             </div>
+            <template v-slot:sidebar>
+                <Heading level="4">Definition</Heading>
+                <p>Hover for a definition.</p>
+            </template>
         </standard-grid>
     </main>
 </template>
@@ -88,27 +95,27 @@ const btn = Button;
 const wordInputValue = ref('');
 
 const words = ref([
-    'credibility',
-    'requirement',
-    'application',
-    'matter',
-    'approach',
-    'viable',
-    'laboratory',
-    'harsh',
-    'portion',
-    'snatch',
-    'pledge',
-    'crowd',
-    'ghostwriter',
-    'performer',
-    'disaster',
-    'will',
-    'rob',
-    'integrated',
-    'danger',
-    'assertive',
-    'court',
+    // 'credibility',
+    // 'requirement',
+    // 'application',
+    // 'matter',
+    // 'approach',
+    // 'viable',
+    // 'laboratory',
+    // 'harsh',
+    // 'portion',
+    // 'snatch',
+    // 'pledge',
+    // 'crowd',
+    // 'ghostwriter',
+    // 'performer',
+    // 'disaster',
+    // 'will',
+    // 'rob',
+    // 'integrated',
+    // 'danger',
+    // 'assertive',
+    // 'court',
 ]);
 
 const wordMap = computed(() => {
@@ -121,10 +128,12 @@ const wordMap = computed(() => {
     );
 });
 
-const addWords = () => {
-    if (!wordInputValue.value.trim()) return;
-    words.value.push(...wordInputValue.value.split(/\s/));
-    wordInputValue.value = '';
+const addWords = (string) => {
+    if (!string.trim()) return;
+    words.value.push(
+        ...string.split(/\s/).map((word) => word.replace(/\W/gi, ''))
+    );
+    string = '';
 };
 
 const removeDuplicates = (array) => {
@@ -134,6 +143,10 @@ const removeDuplicates = (array) => {
 
 const duplicates = computed(() =>
     wordMap.value.filter(([word, count]) => count > 1)
+);
+
+addWords(
+    `I'm going to type every word I know! Rectangle. America. Megaphone. Monday. Butthole.`
 );
 
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
