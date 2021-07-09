@@ -2,7 +2,6 @@
 import { h } from '@vue/runtime-core';
 export default {
     setup(props, { slots, attrs }) {
-        console.log(slots.default(), 'h' + attrs.level);
         return () =>
             h(
                 'h' + attrs.level, // tag name

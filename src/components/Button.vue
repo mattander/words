@@ -5,19 +5,21 @@
 </template>
 
 <script setup>
+import { ref } from '@vue/reactivity';
+
 const { type, disabled } = defineProps({
     type: { type: String, default: 'primary' },
     disabled: { type: Boolean, default: false },
 });
 
-const classList = [
+const classList = ref([
     'border',
     'rounded-md',
     'py-1',
     'px-3',
     'min-w-4/5',
     'font-heading',
-];
+]);
 
 const typeColourMap = {
     success: 'green',
@@ -60,6 +62,6 @@ const addColourClasses = (colour) => {
 };
 
 // Disabled style overrides others
-if (disabled) classList.push(['bg-gray-400', 'border-gray-400']);
-else classList.push(...addColourClasses(typeColourMap[type]));
+if (disabled) classList.value.push(['bg-gray-400', 'border-gray-400']);
+else classList.value.push(...addColourClasses(typeColourMap[type]));
 </script>

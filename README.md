@@ -3,6 +3,10 @@ Hello, and welcome to my Ted-oh wrong thing.
 
 This is words. Words is the most useless thing I've ever built.
 
+Wanna try it out? Wait, really? You do? I'm serious. It's useless.
+
+Okay. Enjoy. https://mattander.github.io/words/ 
+
 ## Why did I make it?
 I wanted to learn Tailwind and mess around with Vue 3 so I made something stupid but fun.
 
