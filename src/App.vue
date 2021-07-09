@@ -90,10 +90,8 @@ const wordInputValue = ref('');
 const words = ref([
     'credibility',
     'requirement',
-    'slave',
     'application',
     'matter',
-    'hostage',
     'approach',
     'viable',
     'laboratory',
