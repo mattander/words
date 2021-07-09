@@ -124,6 +124,7 @@ const wordMap = computed(() => {
 });
 
 const addWords = () => {
+    if (!wordInputValue.value.trim()) return;
     words.value.push(...wordInputValue.value.split(/\s/));
     wordInputValue.value = '';
 };
