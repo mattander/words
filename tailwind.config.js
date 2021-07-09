@@ -14,7 +14,8 @@ const generateFontRems = (min = 8, max = 24) => {
 };
 
 module.exports = {
-    purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx,css}'],
+    // purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx,css}'],
+    purge: false,
     darkMode: false, // or 'media' or 'class'
     theme: {
         fontFamily: {
