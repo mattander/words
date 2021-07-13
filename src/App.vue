@@ -149,5 +149,18 @@ addWords(
     `I'm going to type every word I know! Rectangle. America. Megaphone. Monday. Butthole.`
 );
 
+// WIP
+const getDefinition = function (word) {
+    const cache = {};
+
+    return async () => {
+        if (cache[word]) return cache[word];
+        else
+            cache[word] = await fetch(
+                `https://api.dictionaryapi.dev/api/v2/entries/en_US/${word}`
+            ).then();
+    };
+};
+
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>
